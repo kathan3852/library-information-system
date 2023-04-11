@@ -70,7 +70,7 @@ render(){
         <div className="container mt-6 text-center align-self-center full">
             <div className="row text-center justify-content-center heading">
             <div className="col-12">
-                <h3>Stats</h3>
+                <h3> <b>Statistics </b></h3>
             </div>
             </div>
             <div className="row">

@@ -32,14 +32,14 @@ An admin can
 
 1. You can try logging in as an **admin** by entering the following credentials:
 
-* **username**: *Director*
-* **password**: *123pass*
+* **username**: *director*
+* **password**: *director*
 
 2. You can also register yourself as a student and then login to view the options available to a student.
 
 ## View live App
 
-Hosted at https://lib-manage.herokuapp.com/
+Hosted at 
 
 ## Tech Stack Used
 

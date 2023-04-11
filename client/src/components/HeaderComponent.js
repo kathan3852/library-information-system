@@ -81,24 +81,24 @@ class Header extends Component{
     render(){
         return (
             <React.Fragment>
-                 <Navbar color="dark" dark expand="xl" fixed="top">
+                 <Navbar className='navbar mb-5' dark expand="xl" fixed="top">
                     <div className="container">
                      <NavbarToggler onClick={this.toggleNav}></NavbarToggler>
-                     <NavbarBrand className="mr-auto text-primary" href="/home">
-                     Central Library
+                     <NavbarBrand className="mr-auto navbar-text" href="/home">
+                     <b>LIS</b>
                      </NavbarBrand>
                      <Collapse isOpen={this.state.isNavOpen} navbar>
                      <Nav navbar>
                         <NavItem className="ml-2" onClick={this.toggleNav}>
-                            <NavLink className="nav-link text-primary" to="/home">
+                            <NavLink className="nav-link navbar-text" to="/home">
                                <span className="fa fa-home fa-lg"/> Home
                            </NavLink>
                         </NavItem>
                         {this.props.auth.userinfo&&this.props.auth.userinfo.admin?(
-                            <NavItem className="">
+                            <NavItem className="ml-2">
                             <Dropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                             <DropdownToggle color="Primary" >
-                            <div className="text-primary">
+                            <div className="nav-link navbar-text">
                                                     <span className="fa fa-book fa-lg"/> Books
                                                    &nbsp; <i className="fa fa-caret-down fa-sm" aria-hidden="true"></i>
 
@@ -113,7 +113,7 @@ class Header extends Component{
                           </NavItem>
                         ):(
                             <NavItem className="ml-2" onClick={this.toggleNav}>
-                                  <NavLink className="nav-link text-primary" to="/books">
+                                  <NavLink className="nav-link navbar-text" to="/books">
                                                     <span className="fa fa-book fa-lg"/> Books
                                                 </NavLink>
                               </NavItem>
@@ -121,14 +121,14 @@ class Header extends Component{
                         )}
                         
                         <NavItem className="ml-2" onClick={this.toggleNav}>
-                            <NavLink className="nav-link text-primary" to="/search">
+                            <NavLink className="nav-link navbar-text" to="/search">
                                 <span className="fa fa-search fa-lg"/> Search
                             </NavLink>
                         </NavItem>
                         {
                             (this.props.auth.isAuthenticated)?(
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                                <NavLink className="nav-link text-primary" to="/profile">
+                                <NavLink className="nav-link navbar-text" to="/profile">
                                      <span className="fa fa-user-circle-o fa-lg"/> My Profile
                                 </NavLink>
                                 </NavItem>
@@ -138,7 +138,7 @@ class Header extends Component{
                         {
                             (this.props.auth.isAuthenticated&&!this.props.auth.userinfo.admin)?(
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                               <NavLink className="nav-link text-primary" to="/history">
+                               <NavLink className="nav-link navbar-text" to="/history">
                                      <span className="fa fa-history"/> Issue history
                                 </NavLink>
                                 </NavItem>
@@ -149,18 +149,18 @@ class Header extends Component{
                             (this.props.auth.isAuthenticated&&this.props.auth.userinfo.admin)?(
                               <React.Fragment>
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                                <NavLink className="nav-link text-primary" to="/issue">
+                                <NavLink className="nav-link navbar-text" to="/issue">
                                      <span className="fa fa-plus-square"/> Issue Book
                                 </NavLink>
                                 </NavItem>
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                                <NavLink className="nav-link text-primary" to="/return">
+                                <NavLink className="nav-link navbar-text" to="/return">
                                    <span className="fa fa-list-ul"/> Return Book
                                 </NavLink>
                                 </NavItem>
                                 <NavItem onClick={this.toggleNav} className="ml-2">
-                                <NavLink className="nav-link text-primary" to="/stats">
-                                   <span className="fa fa-info-circle"/> Stats
+                                <NavLink className="nav-link navbar-text" to="/stats">
+                                   <span className="fa fa-info-circle"/> Statistics
                                 </NavLink>
                                 </NavItem>
                               </React.Fragment>
